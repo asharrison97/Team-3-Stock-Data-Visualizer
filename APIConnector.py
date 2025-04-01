@@ -1,6 +1,6 @@
 import requests;
 
-# this function will accept a function type and stock symbol in order to create a valid API request
+# this function will accept a function type, stock symbol, and a time interval in order to create a valid API request
 def get_api_connection(type, symbol, interval):
     functionType = type
     stockSymbol = symbol
