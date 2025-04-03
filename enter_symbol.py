@@ -8,13 +8,8 @@ def get_stock_symbol():
     print()
 
     # enter stock symbol
-    while(stock_symbol == None):
+    while(stock_symbol == ""):
         #prompt for input
         symbol_input = input("Enter Stock Symbol: ")
-        #validate symbol
-            # try api request with provided symbol:
-                #return validated sybmol
-            # catch
-                #display "Please enter a valid stock symbol"
-                #continue
+        return symbol_input
 
