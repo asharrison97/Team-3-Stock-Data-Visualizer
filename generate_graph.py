@@ -17,7 +17,7 @@ def create_chart(data, start_date, end_date, chart_input, symbol_input, intraday
         bar_chart = pygal.Bar()
         chart_title = f"Stock Data for {symbol_input}: {start_date} to {end_date}"
         bar_chart.title = chart_title
-        bar_chart.x_labels = intraday_interval
+        bar_chart.x_labels = map(intraday_interval, range(start_date, end_date))
         bar_chart.add("Open", open)
         bar_chart.add("High", high)
         bar_chart.add("Low", low)
@@ -26,4 +26,14 @@ def create_chart(data, start_date, end_date, chart_input, symbol_input, intraday
         bar_chart.render_in_browser()
 
     elif chart_input == "2":
-        pass
+        #Line chart components:
+        line_chart = pygal.Line()
+        chart_title = f"Stock Data for {symbol_input}: {start_date} to {end_date}"
+        line_chart.title = chart_title
+        line_chart.x_labels = map(intraday_interval, range(start_date, end_date))
+        bar_chart.add("Open", open)
+        bar_chart.add("High", high)
+        bar_chart.add("Low", low)
+        bar_chart.add("Close", close)
+    
+        bar_chart.render_in_browser()
