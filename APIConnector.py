@@ -1,5 +1,4 @@
 import requests
-import csv
 
 # this function will accept a function type, stock symbol, and a time interval in order to create a valid API request
 def get_api_connection(time_series, symbol, interval):
