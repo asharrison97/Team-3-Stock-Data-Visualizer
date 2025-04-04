@@ -31,9 +31,9 @@ def create_chart(data, start_date, end_date, chart_input, symbol_input, intraday
         chart_title = f"Stock Data for {symbol_input}: {start_date} to {end_date}"
         line_chart.title = chart_title
         line_chart.x_labels = map(intraday_interval, range(start_date, end_date))
-        bar_chart.add("Open", open)
-        bar_chart.add("High", high)
-        bar_chart.add("Low", low)
-        bar_chart.add("Close", close)
+        line_chart.add("Open", open)
+        line_chart.add("High", high)
+        line_chart.add("Low", low)
+        line_chart.add("Close", close)
     
-        bar_chart.render_in_browser()
+        line_chart.render_in_browser()
