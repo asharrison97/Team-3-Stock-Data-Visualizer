@@ -14,5 +14,5 @@ def main():
     else:
         interval = None
     date_range = get_date_range()
-    get_api_connection(time_series, stock_symbol, interval)
+    data = get_api_connection(time_series, stock_symbol, interval)
 main()
