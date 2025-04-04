@@ -10,7 +10,6 @@ def get_api_connection(time_series, symbol, interval):
         url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&interval=%s&apikey=RZ44H0Q12VLLXK96" % (functionTimeSeries, stockSymbol, timeInterval))
     else:
         url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=RZ44H0Q12VLLXK96" % (functionTimeSeries, stockSymbol))
-    print(url)
     # we are using the url constructed to execute a request
     r = requests.get(url)
     # set data variable equal to the .json file that was returned from the API request
