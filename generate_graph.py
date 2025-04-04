@@ -1,5 +1,5 @@
 #Function to create a pygal bar or line chart, based on the user's input.
-import pygal;
+import pygal
 def create_chart(data, start_date, end_date, chart_input, symbol_input, intraday_interval):
     open = []
     high = []
