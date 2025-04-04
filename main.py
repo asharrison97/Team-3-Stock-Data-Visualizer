@@ -11,6 +11,9 @@ def main():
     time_series = get_time_series()
     if(time_series == "INTRADAY"):
         interval = int(input("\nEnter an appropriate time interval for the INTRADAY function."))
+    else:
+        interval = None
     date_range = get_date_range()
+    print(date_range)
     get_api_connection(time_series, stock_symbol, interval)
 main()
