@@ -1,15 +1,15 @@
 import requests;
 
 # this function will accept a function type, stock symbol, and a time interval in order to create a valid API request
-def get_api_connection(time_series, symbol, interval):
-    functionTimeSeries = time_series
+def get_api_connection(type, symbol, interval):
+    functionType = type
     stockSymbol = symbol
-    timeInterval = interval
+    stockInterval = interval
     # check if the user requested an intraday type, which requires the use of the interval parameter
-    if(functionTimeSeries == "TIME_SERIES_INTRADAY"):
-        url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&interval=%s&apikey=RZ44H0Q12VLLXK96" % (functionTimeSeries, stockSymbol, timeInterval))
+    if(functionType == "TIME_SERIES_INTRADAY"):
+        url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&interval=%s&apikey=RZ44H0Q12VLLXK96" % (functionType, stockSymbol, stockInterval))
     else:
-        url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=RZ44H0Q12VLLXK96" % (functionTimeSeries, stockSymbol))
+        url = ("https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=RZ44H0Q12VLLXK96" % (functionType, stockSymbol))
     # we are using the url constructed to execute a request
     r = requests.get(url)
     data = r.json()
