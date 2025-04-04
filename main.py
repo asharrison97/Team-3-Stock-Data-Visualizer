@@ -9,11 +9,10 @@ def main():
     stock_symbol = get_stock_symbol()
     chart_type = get_chart_type()
     time_series = get_time_series()
-    if(time_series == "INTRADAY"):
+    if(time_series == "TIME_SERIES_INTRADAY"):
         interval = int(input("\nEnter an appropriate time interval for the INTRADAY function."))
     else:
         interval = None
     date_range = get_date_range()
-    print(date_range)
     get_api_connection(time_series, stock_symbol, interval)
 main()
