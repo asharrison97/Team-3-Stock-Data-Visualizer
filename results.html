@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data for {symbol_input}: {start_date} to {end_date}</title>
+</head>
+<body>
+
+    {% if query_result %}
+        {% if chart %}
+            <!-- Don't forget the "|safe"! -->
+            <div id="chart">
+                <embed type="image/svg+xml" src= {{ chart|safe }} />
+                <object type="image/svg+xml" data="{{ url_for('static', filename='chart.svg') }}"></object>
+            </div>
+    {% endif %}
+
+        <ul>
+            {% for stock in query_result %}
+                <li>
+                    Open: {{ stock["Open"] }}<br>
+                    High: {{ stock["High"] }}<br>
+                    Low: {{ stock["Low"] }}<br>
+                    Close: {{ stock["Close"] }}<br>
+                    <br>
+                </li>
+
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+    
+</body>
+</html>
