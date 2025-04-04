@@ -9,16 +9,16 @@ def get_time_series():
         try:
             user_choice = int(input("\nEnter time series option (1, 2, 3, 4):"))
             if user_choice == 1:
-                time_series = "Intraday"
+                time_series = "TIME_SERIES_INTRADAY"
                 return time_series
             elif user_choice == 2:
-                time_series = "Daily"
+                time_series = "TIME_SERIES_DAILY"
                 return time_series
             elif user_choice == 3:
-                time_series = "Weekly"
+                time_series = "TIME_SERIES_WEEKLY"
                 return time_series
             elif user_choice == 4:
-                time_series = "Monthly"
+                time_series = "TIME_SERIES_MONTHLY"
                 return time_series
             else:
                 print("A valid option must be selected!")
