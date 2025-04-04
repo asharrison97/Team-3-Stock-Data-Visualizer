@@ -7,10 +7,10 @@ def create_chart(data, start_date, end_date, chart_input, symbol_input, intraday
     close = []
 
     for files in data:
-        open.append(files["1. open"])
-        high.append(files["2. high"])
-        low.append(files["3. low"])
-        close.append(files["4. close"])
+        open.append(files["open"])
+        high.append(files["high"])
+        low.append(files["low"])
+        close.append(files["close"])
 
     if chart_input == "1":
         #Bar chart components:
